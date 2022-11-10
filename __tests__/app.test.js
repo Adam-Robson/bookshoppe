@@ -15,7 +15,9 @@ describe('books routes', () => {
 
   test('return book detail', async () => {
     const res = await request(app).get('/books');
-    const don = res.body.find(book => expect(book.id).deepEquality('1'));
+    const don = res.body.find((book) => {
+      return expect(book.id = '1');
+    });
     expect(don).toHaveProperty('id', '1');
     expect(don).toHaveProperty('title', 'The Ingenious Gentleman Don Quixote of La Mancha');
   });
