@@ -8,12 +8,23 @@ describe('books routes', () => {
     return setup(pool);
   });
 
-  test('returns a list of books', async () => {
+  test('return a list of books', async () => {
     const res = await request(app).get('/books');
     expect(res.body.length).toEqual(18);
   });
 });
 
-afterAll(() => {
-  pool.end();
+describe('authors routes', () => {
+  beforeEach(() => {
+    return setup(pool);
+  });
+
+  test('return a list of authors', async () => {
+    const res = await request(app).get('/authors');
+    expect(res.body.length).toEqual(13);
+  });
+
+  afterAll(() => {
+    pool.end();
+  });
 });
