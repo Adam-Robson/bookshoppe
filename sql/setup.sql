@@ -81,8 +81,8 @@ VALUES
     (7, 11, 'The Count of Monte Cristo'),
     (8, 12, 'The Scarlett Letter'),
     (9, 13, 'The Color Purple'),
-    (10, 14, 'A Hitchikers Guide to the Galaxy'),
+    (10, 14, 'A Hitchiker&apos;s Guide to the Galaxy'),
     (11, 15, 'Black Beauty'),
     (12, 16, 'Moby Dick'),
     (13, 17, 'Brave New World'),
-    (13, 18, 'The Perrenial Philosophy');
+    (13, 18, 'The Perennial Philosophy');
