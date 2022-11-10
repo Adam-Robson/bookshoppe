@@ -3,12 +3,12 @@
 DROP TABLE IF EXISTS books;
 
 CREATE TABLE books (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  title VARCHAR NOT NULL,
-  released BIGINT NOT NULL
-  );
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title VARCHAR NOT NULL,
+    released SMALLINT NOT NULL
+);
 
-INSERT INTO books (title, release) VALUES
+INSERT INTO books (title, released) VALUES
 ('The Ingenious Gentleman Don Quixote of La Mancha', 1615),
 ('La Galatea', 1585),
 ('Frankenstein', 1818),
