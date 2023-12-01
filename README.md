@@ -20,8 +20,7 @@ This is a backend application built with [Express](https://expressjs.com/) and [
 
 ## General Information
 
-This project was built as part of my time in the July 2022 cohort
-at Alchemy Code Lab, in Portland, Oregon.
+This project was built as part of my time in the July 2022 cohort at Alchemy Code Lab in Portland, Oregon.
 
 ## Features
 
@@ -29,14 +28,14 @@ This backend application uses Express to create a server and Postgres to create 
 
 ## Run Locally
 
-| command                | description                                                                         |
+| Command                | Description                                                                         |
 | ---------------------- | ----------------------------------------------------------------------------------- |
-| `npm start`            | starts the app - should only be used in production as changes will not get reloaded |
-| `npm run start:watch`  | runs the app using `nodemon` which watches for changes and reloads the app          |
-| `npm test`             | runs the tests once                                                                 |
-| `npm run test:watch`   | continually watches and runs the tests when files are updated                       |
-| `npm run setup-db`     | sets up the database locally                                                        |
-| `npm run setup-heroku` | sets up the database on heroku                                                      |
+| `npm start`            | Starts the app - should only be used in production as changes will not get reloaded |
+| `npm run start:watch`  | Runs the app using `nodemon` which watches for changes and reloads the app          |
+| `npm test`             | Runs the tests once                                                                 |
+| `npm run test:watch`   | Continually watches and runs the tests when files are updated                       |
+| `npm run setup-db`     | Sets up the database locally                                                        |
+| `npm run setup-heroku` | Sets up the database on Heroku                                                      |
 
 ## Routes
 
@@ -65,10 +64,8 @@ This backend application uses Express to create a server and Postgres to create 
 
 ## Acknowledgements
 
-Thanks to Alchemy Code Lab for providing the instructor [Julie Nisbet](https://www.github.com/julienisbet),
-who created the template for the project, and was crucial in debugging along the way!
+Thanks to Alchemy Code Lab and instructor [Julie Nisbet](https://www.github.com/julienisbet), who created the template for the project and was crucial in debugging along the way!
 
 ## Contact
 
-Feel free to reach out! I can be messaged through LinkedIn by
-clicking on the badge above, or by emailing me at adamray312@gmail.com
+Feel free to reach out! I can be messaged through LinkedIn by clicking on the badge above or by emailing me at adamray312@gmail.com.
