@@ -9,16 +9,26 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: alchemy
-          POSTGRES_PASSWORD: alchemy
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci --dev
-      - run: npx eslint .
-      - run: npm test
+      - name: Chechout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Install Dependencies
+        run: npm ci --dev
+
+      - name: Lint
+        run: npx eslint .
+
+      - name: Test
+        run: npm test
         env:
           CI: true
-          DATABASE_URL:
+          DATABASE_URL: postgres://postgres@localhost:5432/postgres
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           SALT_ROUNDS: ${{ secrets.SALT_ROUNDS }}
           COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
