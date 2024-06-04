@@ -1,12 +1,12 @@
-const pool = require('../lib/utils/pool');
-const setup = require('../data/setup');
-const request = require('supertest');
-const app = require('../lib/app');
-
-describe('bowaoks routes', () => {
+import pool from '../lib/utils/pool.js';
+import initializeSetup from '../data/setup.js';
+import request from 'supertest';
+import app from '../lib/app.js';
+import { TBook } from '../lib/utils/types.js';
+describe('books routes', () => {
 
   beforeEach(() => {
-    return setup(pool);
+    return initializeSetup(pool);
   });
 
   test('return a list of books', async () => {
@@ -16,10 +16,10 @@ describe('bowaoks routes', () => {
 
   test('return book detail', async () => {
     const res = await request(app).get('/books');
-    const don = await res.body.find((book) => {
-      return expect(book.id = '1');
+    const don = await res.body.find((book: TBook) => {
+      return expect(book.id = 1);
     });
-    expect(don).toHaveProperty('id', '1');
+    expect(don).toHaveProperty('id', 1);
     expect(don).toHaveProperty('title', 'The Ingenious Gentleman Don Quixote of La Mancha');
   });
 

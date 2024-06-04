@@ -1,5 +1,4 @@
--- This file defines the SQL tables
--- The SQL in this file will be executed when you run `npm run setup-db`
+-- This content can be executed with `npm run setup-db` see package.json
 DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS authors CASCADE;
 DROP TABLE IF EXISTS authors_books;

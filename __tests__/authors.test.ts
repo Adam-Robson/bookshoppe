@@ -1,12 +1,13 @@
-const pool = require('../lib/utils/pool');
-const setup = require('../data/setup');
-const request = require('supertest');
-const app = require('../lib/app');
+import pool from '../lib/utils/pool.js';
+import initializeSetup from '../data/setup.js';
+import request from 'supertest';
+import app from '../lib/app.js';
+import { TAuthor } from '../lib/utils/types.js';
 
 describe('authors routes', () => {
 
   beforeEach(() => {
-    return setup(pool);
+    return initializeSetup(pool);
   });
 
   test('return a list of authors', async () => {
@@ -16,8 +17,8 @@ describe('authors routes', () => {
 
   test('return an author and detail', async () => {
     const res = await request(app).get('/authors');
-    const writer = await res.body.find((author) => author.id === '3');
-    expect(writer).toHaveProperty('id', '3');
+    const writer = await res.body.find((author: TAuthor) => author.id === 3);
+    expect(writer).toHaveProperty('id', 3);
     expect(writer).toHaveProperty('name', 'Ralph Ellison');
     expect(writer).toMatchObject({ id: writer.id, name: writer.name });
   });

@@ -1,13 +1,14 @@
-# Express Book Shoppe
+# Express Bookshoppe
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://adamrobson.vercel.app/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adamrayrobson)
 
-This is a backend application built with [Express](https://expressjs.com/) and [Postgres](https://www.postgresql.org/).
+This is a backend application built with [Express](https://expressjs.com/)
+  and [Postgres](https://www.postgresql.org/).
 
 ## Table of Contents
 
-- [Express-Book-Shoppe](#express-book-shoppe)
+- [Express Bookshoppe](#express-bookshoppe)
   - [Table of Contents](#table-of-contents)
   - [General Information](#general-information)
   - [Features](#features)
@@ -20,22 +21,30 @@ This is a backend application built with [Express](https://expressjs.com/) and [
 
 ## General Information
 
-This project was built as part of my time in the July 2022 cohort at Alchemy Code Lab in Portland, Oregon.
+This project was originally built while at Alchemy Code Lab in Portland,
+  Oregon. Since it's original iteration, I converted the project to
+  TypeScript, and have added various features as time moves on.
 
 ## Features
 
-This backend application uses Express to create a server and Postgres to create a database. It includes the functionality to Create Read Update and Delete books from the database.
+This backend application uses Express to create a server and Postgres to
+  create a database. It includes the functionality to Create Read Update
+  and Delete books from the database. It also includes authentication and
+  authorization, tracking users and roles accordingly.
 
 ## Run Locally
 
-| Command                | Description                                                                         |
-| ---------------------- | ----------------------------------------------------------------------------------- |
-| `npm start`            | Starts the app - should only be used in production as changes will not get reloaded |
-| `npm run start:watch`  | Runs the app using `nodemon` which watches for changes and reloads the app          |
-| `npm test`             | Runs the tests once                                                                 |
-| `npm run test:watch`   | Continually watches and runs the tests when files are updated                       |
-| `npm run setup-db`     | Sets up the database locally                                                        |
-| `npm run setup-heroku` | Sets up the database on Heroku                                                      |
+|     Command            |        Description                               |
+| ---------------------- | ------------------------------------------------ |
+| `npm start`            | Starts the app - should only be used in          |
+|                        |   production as changes will not get reloaded    |
+| `npm run start:watch`  | Runs the app using `nodemon` which watches for   |
+                         |   changes and reloads the app                    |
+| `npm test`             | Runs the tests once                              |
+| `npm run test:watch`   | Continually watches and runs the tests when      |
+                         |   files are updated                              |
+| `npm run setup-db`     | Sets up the database locally                     |
+| `npm run setup-heroku` | Sets up the database on Heroku                   |
 
 ## Routes
 
@@ -64,8 +73,10 @@ This backend application uses Express to create a server and Postgres to create 
 
 ## Acknowledgements
 
-Thanks to Alchemy Code Lab and instructor [Julie Nisbet](https://www.github.com/julienisbet), who created the template for the project and was crucial in debugging along the way!
+Thanks to Alchemy Code Lab and instructor [Julie Nisbet](https://www.github.com/julienisbet), who created the template for the
+    project and was crucial in debugging along the way!
 
 ## Contact
 
-Feel free to reach out! I can be messaged through LinkedIn by clicking on the badge above or by emailing me at adamray312@gmail.com.
+Feel free to reach out. I can be messaged through LinkedIn by clicking on the
+    badge above or by emailing me directly at <adamrayrobson@gmail.com>.

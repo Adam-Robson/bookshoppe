@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-block-size: 100vh;
+  max-inline-size: 100vw;
+  margin: 0;
+  padding: 0;
+  border: solid red 2px;
+}
