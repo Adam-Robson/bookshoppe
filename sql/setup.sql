@@ -1,7 +1,16 @@
 -- This content can be executed with `npm run setup-db` see package.json
 DROP TABLE IF EXISTS books CASCADE;
 DROP TABLE IF EXISTS authors CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS authors_books;
+
+CREATE TABLE users (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  email VARCHAR,
+  password_hash VARCHAR NOT NULL,
+  first_name VARCHAR NOT NULL,
+  last_name VARCHAR NOT NULL
+);
 
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -24,6 +33,28 @@ CREATE TABLE authors_books (
     FOREIGN KEY (author_id) REFERENCES authors(id),
     FOREIGN KEY (book_id) REFERENCES books(id)
 );
+
+INSERT INTO
+  users (email, password_hash, first_name, last_name)
+VALUES
+  (
+    'alvin@example.com',
+    'notarealpasswordhash',
+    'Alvin',
+    'A'
+  ),
+  (
+    'bob@example.com',
+    'notarealpasswordhash',
+    'Bob',
+    'B'
+  ),
+  (
+    'carole@example.com',
+    'notarealpasswordhash',
+    'Carole',
+    'C'
+  );
 
 INSERT INTO books
 (title, released)

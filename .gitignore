@@ -29,7 +29,6 @@ jspm_packages/
 
 # TypeScript cache & build folder
 *.tsbuildinfo
-/dist/**
 
 # Optional npm cache directory
 .npm
@@ -66,6 +65,7 @@ jspm_packages/
 # Next.js build output
 .next
 out
+dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode

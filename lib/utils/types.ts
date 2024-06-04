@@ -12,3 +12,13 @@ export type TAuthor = {
   pob: string;
   books: TBook[];
 }
+
+export type TUser = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password?: string;
+  passwordHash?: string;
+  password_hash?: string;
+}
