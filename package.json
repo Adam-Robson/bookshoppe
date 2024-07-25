@@ -1,9 +1,9 @@
 {
-  "name": "backend-express-template",
-  "version": "1.0.0",
-  "description": "",
+  "name": "bookshoppe",
+  "version": "2.0.0",
+  "description": "bookshoppe converted to esm",
   "main": "server.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "jest --verbose --runInBand --testLocationInResults --setupFiles dotenv/config --passWithNoTests",
     "test:watch": "npm run test -- --watch",
@@ -19,26 +19,27 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/eslint-parser": "^7.18.2",
-    "@babel/eslint-plugin": "^7.17.7",
-    "@babel/plugin-syntax-class-properties": "^7.12.13",
-    "@types/jest": "^28.1.1",
-    "@types/pg": "^8.6.5",
-    "eslint": "^8.17.0",
-    "jest": "^28.1.0",
-    "nodemon": "^2.0.16",
-    "prettier": "^2.6.2",
-    "supertest": "^6.2.3"
+    "@babel/core": "latest",
+    "@babel/eslint-parser": "latest",
+    "@babel/eslint-plugin": "latest",
+    "@babel/plugin-syntax-class-properties": "latest",
+    "@types/express": "^4.17.21",
+    "@types/jest": "latest",
+    "@types/node": "^20.14.12",
+    "@types/pg": "latest",
+    "eslint": "latest",
+    "jest": "latest",
+    "nodemon": "^3.1.4",
+    "prettier": "latest",
+    "supertest": "latest"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "cross-env": "^7.0.3",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^8.5.1",
-    "pg": "^8.7.3"
+    "bcrypt": "latest",
+    "cookie-parser": "latest",
+    "cors": "latest",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "latest",
+    "pg": "latest"
   }
 }

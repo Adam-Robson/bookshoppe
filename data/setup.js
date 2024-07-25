@@ -1,27 +1,31 @@
-/* eslint-disable no-console */
-const fs = require('fs').promises;
+import path from 'path';
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
 
-module.exports = (pool) => {
-  return fs
-    .readFile(`${__dirname}/../sql/setup.sql`, { encoding: 'utf-8' })
-    .then((sql) => pool.query(sql))
-    .then(() => {
-      if (process.env.NODE_ENV !== 'test') {
-        console.log('✅ Database setup complete!');
-      }
-    })
-    .catch((error) => {
-      const dbNotFound = error.message.match(/database "(.+)" does not exist/i);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-      if (dbNotFound) {
-        const [err, db] = dbNotFound;
-        console.error('❌ Error: ' + err);
-        console.info(
-          `Try running \`createdb -U postgres ${db}\` in your terminal`
-        );
-      } else {
-        console.error(error);
-        console.error('❌ Error: ' + error.message);
-      }
-    });
-};
+export default async function setup(pool) {
+  try {
+    const sql = await fs.readFile(`${__dirname}/../sql/setup.sql`, { encoding: 'utf-8' });
+    const res = await pool.query(sql);
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('✅ Database setup complete!');
+    }
+
+    return res;
+  } catch (error) {
+    const dbNotFound = error.message.match(/database "(.+)" does not exist/i);
+
+    if (dbNotFound) {
+      const [, db] = dbNotFound;
+      console.error('❌ Error: ' + error.message);
+      console.info(
+        `Try running \`createdb -U postgres ${db}\` in your terminal`
+      );
+    } else {
+      console.error(error);
+      console.error('❌ Error: ' + error.message);
+    }
+  }
+}
+

@@ -1,7 +1,15 @@
-/* eslint-disable no-console */
-const pool = require('./lib/utils/pool');
-const setup = require('./data/setup');
+import pool from './lib/utils/pool.js';
+import setup from './data/setup.js';
 
-setup(pool)
-  .catch((err) => console.error(err))
-  .finally(() => process.exit());
+async function initializeDatabase() {
+  try {
+    await setup(pool);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+initializeDatabase().then(() => {
+  pool.end();
+  process.exit();
+});

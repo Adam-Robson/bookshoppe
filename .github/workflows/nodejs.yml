@@ -9,16 +9,16 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: alchemy
-          POSTGRES_PASSWORD: alchemy
+          POSTGRES_USER: adamrobson
+          POSTGRES_PASSWORD: postgres
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: npm ci --dev
       - run: npx eslint .
       - run: npm test
         env:
           CI: true
-          DATABASE_URL: postgres://alchemy:alchemy@postgres:5432/alchemy
+          DATABASE_URL: postgres://adamrobson:postgres@postgres:5432/postgres
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           SALT_ROUNDS: ${{ secrets.SALT_ROUNDS }}
           COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
