@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import pool from '../lib/utils/pool';
 import setup from '../data/setup';
 import request from 'supertest';
