@@ -9,16 +9,19 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: adamrobson
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - run: npm ci --dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
       - run: npx eslint .
       - run: npm test
         env:
           CI: true
-          DATABASE_URL: postgres://adamrobson:postgres@postgres:5432/postgres
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           SALT_ROUNDS: ${{ secrets.SALT_ROUNDS }}
           COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
