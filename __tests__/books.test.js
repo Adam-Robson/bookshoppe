@@ -1,12 +1,15 @@
-const pool = require('../lib/utils/pool');
-const setup = require('../data/setup');
-const request = require('supertest');
-const app = require('../lib/app');
+import dotenv from 'dotenv';
+dotenv.config();
+import pool from '../lib/utils/pool';
+import setup from '../data/setup';
+import request from 'supertest';
+import app from '../lib/app';
 
-describe('bowaoks routes', () => {
+import { describe, expect, test, beforeEach, afterAll } from '@jest/globals';
 
-  beforeEach(() => {
-    return setup(pool);
+describe('books routes', () => {
+  beforeEach(async () => {
+    await setup(pool);
   });
 
   test('return a list of books', async () => {
@@ -15,15 +18,15 @@ describe('bowaoks routes', () => {
   });
 
   test('return book detail', async () => {
-    const res = await request(app).get('/books');
-    const don = await res.body.find((book) => {
+    const response = await request(app).get('/books');
+    const don = response.body.find((book) => {
       return expect(book.id = '1');
     });
     expect(don).toHaveProperty('id', '1');
     expect(don).toHaveProperty('title', 'The Ingenious Gentleman Don Quixote of La Mancha');
   });
 
-  afterAll(() => {
-    pool.end();
+  afterAll(async () => {
+    await pool.end();
   });
 });
