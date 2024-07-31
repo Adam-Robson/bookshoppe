@@ -3,7 +3,7 @@ import setup from '../data/setup';
 import request from 'supertest';
 import app from '../lib/app';
 
-import { describe, expect, test, beforeEach, afterAll } from 'jest';
+import { describe, expect, test, beforeEach, afterAll } from '@jest/globals';
 
 
 describe('authors routes', () => {
